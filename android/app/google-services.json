@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "30798704049",
+    "project_id": "marcas-ifba",
+    "storage_bucket": "marcas-ifba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:30798704049:android:b11ceda994b248fcf0e190",
+        "android_client_info": {
+          "package_name": "com.marcas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "30798704049-buhnv9iuf4i2vafbv2ktab5t8autihbm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJzbr_yGWQx_am1WjJKPylqc45J-uxPCM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "30798704049-buhnv9iuf4i2vafbv2ktab5t8autihbm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

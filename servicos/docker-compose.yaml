@@ -1,0 +1,77 @@
+version: "3"
+services:
+  feeds:
+    image: marcas
+    build: ./dockerfiles/servicos/
+    hostname: feeds
+    expose:
+      - '5000'
+    volumes:
+      - './feeds:/servico'
+    command: python3 servico.py
+    networks:
+      marcasnet:
+        ipv4_address: 172.29.1.1
+  empresas:
+    image: marcas
+    build: ./dockerfiles/servicos/
+    hostname: empresas
+    expose:
+      - '5000'
+    volumes:
+      - './empresas:/servico'
+    command: python3 servico.py
+    networks:
+      marcasnet:
+        ipv4_address: 172.29.1.2
+  comentarios:
+    image: marcas
+    build: ./dockerfiles/servicos/
+    hostname: comentarios
+    expose:
+      - '5000'
+    volumes:
+      - './comentarios:/servico'
+    command: python3 servico.py
+    networks:
+      marcasnet:
+        ipv4_address: 172.29.1.3
+  likes:
+    image: marcas
+    build: ./dockerfiles/servicos/
+    hostname: likes
+    expose:
+      - '5000'
+    volumes:
+      - './likes:/servico'
+    command: python3 servico.py
+    networks:
+      marcasnet:
+        ipv4_address: 172.29.1.4
+  bancodados:
+    image: mysql
+    hostname: bancodados
+    expose:
+      - '3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+    networks:
+      marcasnet:
+        ipv4_address: 172.29.1.5
+  arquivos:
+    image: arquivos
+    build: ./dockerfiles/nginx/
+    volumes:
+      - './assets/imagens:/usr/share/nginx/html'
+    hostname: arquivos
+    expose:
+      - '80'
+    networks:
+      marcasnet:
+        ipv4_address: 172.29.1.6
+networks:
+  marcasnet:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.29.1.0/16
